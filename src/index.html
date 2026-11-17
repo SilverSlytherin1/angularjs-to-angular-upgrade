@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Orders: an AngularJS and Angular hybrid</title>
+    <meta name="description" content="A hybrid AngularJS 1.8 and Angular 21 app in the middle of an incremental migration with ngUpgrade." />
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      // Apply a saved theme before the first paint, so a dark choice never flashes light.
+      try {
+        var theme = localStorage.getItem('orders-demo-theme');
+        if (theme === 'light' || theme === 'dark') document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to orders</a>
+    <div class="shell">
+      <header class="masthead">
+        <div class="masthead-copy">
+          <h1>Orders</h1>
+          <p class="lede">
+            A back office screen halfway through its migration. AngularJS 1.8 still owns the page;
+            the order detail, the demo controls and the notifications are already Angular 21.
+          </p>
+        </div>
+        <!-- Angular component, rendered by AngularJS through downgradeComponent. -->
+        <demo-toolbar></demo-toolbar>
+      </header>
+
+      <main id="main" tabindex="-1">
+        <!-- AngularJS owns this element. UpgradeModule bootstraps it from Angular. -->
+        <order-list></order-list>
+      </main>
+
+      <!-- Right after main in the DOM, so Tab goes from "Mark as shipped" straight to Undo. -->
+      <undo-toast></undo-toast>
+
+      <footer class="site-footer">
+        <p>
+          Built by Emanuel Pinto with AngularJS 1.8.3 and Angular 21.2 on one page.
+          Need an AngularJS or Angular app analysed or upgraded? See
+          <a href="https://riverdevstudio.it/angular-modernization">Angular modernization</a>.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
