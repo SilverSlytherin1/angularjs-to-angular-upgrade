@@ -1,0 +1,36 @@
+{
+  "name": "angularjs-to-angular-upgrade",
+  "version": "1.0.0",
+  "description": "Incremental AngularJS to Angular migration with ngUpgrade: a small hybrid app.",
+  "author": "Emanuel Pinto",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test --watch=false"
+  },
+  "dependencies": {
+    "@angular/common": "21.2.26",
+    "@angular/compiler": "21.2.26",
+    "@angular/core": "21.2.26",
+    "@angular/platform-browser": "21.2.26",
+    "@angular/upgrade": "21.2.26",
+    "angular": "1.8.3",
+    "rxjs": "7.8.2",
+    "tslib": "2.9.1",
+    "zone.js": "0.16.3"
+  },
+  "devDependencies": {
+    "@angular/build": "21.2.30",
+    "@angular/cli": "21.2.30",
+    "@angular/compiler-cli": "21.2.26",
+    "@types/angular": "1.8.9",
+    "jsdom": "30.1.3",
+    "typescript": "5.9.3",
+    "vitest": "4.1.12"
+  },
+  "engines": {
+    "node": "^20.19.0 || ^22.12.0 || >=24.0.0"
+  }
+}
